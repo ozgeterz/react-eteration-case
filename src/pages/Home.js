@@ -90,19 +90,14 @@ function Home() {
       </div>
       {selectcard ? (
         carditems.length > 0 ? (
-          carditems.map((card) => <Card card={card} />)
+          carditems.map((card) => <Card card={card} key={card.id} />) //card.js e prop
         ) : (
           <h1 className="emptycard">NO ANY ITEM IN CARD</h1>
         )
       ) : (
         <div className="product-container">
           {items.map((item) => (
-            <Products
-              items={currentItems}
-              key={item.id}
-              Product={item.name}
-              Price={item.price}
-            />
+            <Products items={currentItems} key={item.id} />
           ))}
           <Pagination
             itemsPerPage={itemsPerPage}

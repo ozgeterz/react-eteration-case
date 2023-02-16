@@ -1,12 +1,10 @@
-const clicktocardReducer=(state=false,action)=>{
-    switch(action.type)
-    {
-        case "cardclick":
-            {
-                return (!state)
-            }
-            default:
-                return state;
+const clicktocardReducer = (state = false, action) => {
+  switch (action.type) {
+    case "cardclick": {
+      return !state;
     }
-}
-export default clicktocardReducer
+    default:
+      return state;
+  }
+};
+export default clicktocardReducer;

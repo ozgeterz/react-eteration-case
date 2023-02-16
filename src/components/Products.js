@@ -4,15 +4,15 @@ import { addtocard } from "../actions";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-function Products({ items }) {
-  //props
+function Products({items}) {
+  //propsd
   const dispatch = useDispatch();
   function Additemincard(item) {
     dispatch(addtocard(item));
-  };
+  }
   return (
     <div className="products">
-      {items.map((item) => { 
+      {items.map((item) => {
         const id = item.id;
         const link = "/details/" + id;
         return (

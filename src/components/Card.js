@@ -8,17 +8,14 @@ function Card({ card }) {
   const deletefromcard = (value) => {
     dispatch(deletefrombasket(value));
   };
-
   return (
     <div className="carditem" idofitem={card.id}>
       <p>{card.name}</p>
       <p>{card.price} $</p>
       <div className="cardbuttons">
-      
         <button onClick={() => deletefromcard()}>-</button>
       </div>
     </div>
   );
 }
-
 export default Card;

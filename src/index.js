@@ -12,9 +12,6 @@ import Details from './pages/Details';
 
 const store=createStore(allreducers)
 
-
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  

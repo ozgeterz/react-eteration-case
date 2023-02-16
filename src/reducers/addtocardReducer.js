@@ -8,7 +8,7 @@ const addtocardReducers = (state = [], action) => {
       let indeks = copyofBasket.findIndex((item) => item.id === action.payload);
       copyofBasket.splice(indeks, 1);
       state = copyofBasket;
-     
+
       return [...state];
     }
     default:
