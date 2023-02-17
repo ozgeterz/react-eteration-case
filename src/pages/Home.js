@@ -5,103 +5,113 @@ import Card from "../components/Card";
 import { useSelector } from "react-redux";
 import Pagination from "../components/Pagination";
 import axios from "axios";
-import tickbox from "../svg/tickbox.svg";
-import tickboxnone from "../svg/tickboxnone.svg";
-import checkmark from "../svg/checkmark.svg";
-import checkmarknone from "../svg/checkmarknone.svg";
+
 function Home() {
-  const [items, setitems] = useState([]);
+  const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(12);
-  const [carditems, setcarditems] = useState([]);
-  let selectcard = useSelector((state) => state.cardclick);
-  let card = useSelector((state) => state.addtocard);
+  const [cardItems, setCardItems] = useState([]);
+  let selectCard = useSelector((state) => state.cardClick);
+  let card = useSelector((state) => state.addToCard);
+
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios.get(
         "https://5fc9346b2af77700165ae514.mockapi.io/products"
       );
-      setitems(res.data);
+      setProducts(res.data);
     };
     fetchItems();
-    setcarditems(card);
-  }, [card, carditems]);
+    setCardItems(card);
+  }, [card, cardItems]);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="home">
       <div className="categories">
-        <div className="sort">
+        <div className="filter">
           <div>
             <h3>
-              <img src={checkmark} alt="checkmark"></img>Old to new
+              <input type="checkbox" />
+              Old to new
             </h3>
             <h3>
-              <img src={checkmarknone} alt="checkmarknone"></img>New to old
+              <input type="checkbox" />
+              New to old
             </h3>
             <h3>
-              <img src={checkmarknone} alt="checkmarknone"></img>Price hight to
-              low
+              <input type="checkbox" />
+              Price hight to low
             </h3>
             <h3>
-              <img src={checkmarknone} alt="checkmarknone"></img>Price low to
-              high
+              <input type="checkbox" />
+              Price low to high
             </h3>
           </div>
         </div>
-        <div className="brand-filter">
-          <div>
+        <div className="filter">
+          <div >
             <form>
               <input type="search" placeholder="Search"></input>
             </form>
 
             <h3>
-              <img src={tickbox} alt="tickbox"></img>Tesla
+              <input type="checkbox" />
+              Tesla
             </h3>
             <h3>
-              <img src={tickboxnone} alt="tickboxnone"></img>Polestar
+              <input type="checkbox" />
+              Polestar
             </h3>
             <h3>
-              <img src={tickboxnone} alt="tickboxnone"></img>Rolls Royce
+              <input type="checkbox" />
+              Rolls Royce
             </h3>
             <h3>
-              <img src={tickboxnone} alt="tickboxnone"></img>Smart
+              <input type="checkbox" />
+              Smart
             </h3>
           </div>
         </div>
-        <div className="model">
+        <div className="filter">
           <div>
             <form>
               <input type="search" placeholder="Search"></input>
             </form>
             <h3>
-              <img src={tickbox} alt="tickbox"></img>Grand Cherokee
+              <input type="checkbox" />
+              Grand Cherokee
             </h3>
             <h3>
-              <img src={tickboxnone} alt="tickboxnone"></img>Durango
+              <input type="checkbox" />
+              Durango
             </h3>
             <h3>
-              <img src={tickboxnone} alt="tickboxnone"></img>Explorer
+              <input type="checkbox" />
+              Explorer
             </h3>
           </div>
         </div>
       </div>
-      {selectcard ? (
-        carditems.length > 0 ? (
-          carditems.map((card) => <Card card={card} key={card.id} />) //card.js e prop
+
+      {selectCard ? (
+        cardItems.length > 0 ? (
+          cardItems.map((card) => <Card card={card} key={card.id} />)
         ) : (
           <h1 className="emptycard">NO ANY ITEM IN CARD</h1>
         )
       ) : (
-        <div className="product-container">
-          {items.map((item) => (
-            <Products items={currentItems} key={item.id} />
+        <div>
+          {products.map((product) => (
+            <Products products={currentItems} key={product.id} />
           ))}
           <Pagination
             itemsPerPage={itemsPerPage}
-            totalItems={items.length}
+            totalItems={products.length}
             paginate={paginate}
           />
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import { useSelector } from "react-redux";
-import { cardclick } from "./actions";
+import { cardClick } from "./actions";
 import { useDispatch } from "react-redux";
 function App() {
-  const card = useSelector((state) => state.addtocard);
+  const card = useSelector((state) => state.addToCard);
   const dispatch = useDispatch();
   return (
     <div className="header">
@@ -18,9 +18,9 @@ function App() {
           <input type="text" placeholder="Search.."></input>
           <button>Search</button>
         </div>
-        <div className="cart" onClick={() => dispatch(cardclick())}>
-          <h3 className="quantity">BASKET({card.length})</h3>
-        </div>
+        <button className="quantity" onClick={() => dispatch(cardClick())}>
+          BASKET({card.length})
+        </button>
       </div>
     </div>
   );

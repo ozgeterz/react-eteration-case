@@ -1,9 +1,6 @@
 *{
   margin: 0 auto;
   padding: 0;
-  
- 
-  
 }
 .products{
   position:absolute;
@@ -11,11 +8,6 @@
   grid-template-columns: repeat(4, 220px);
   justify-content: center;
   margin-top: 50px;
-  
-}
-.product-container{
-  display: flex;
-  flex-direction: column;
 }
 .home{
   position:absolute;
@@ -27,31 +19,26 @@
   color: rgba(0,0, 0, 0.5);
   align-items: center;
 }
-
 .header{
-
   min-height: 3vh;
   overflow: hidden;
   display: flex;
-  background: rgb(60, 28, 221); 
+  background: rgb(51, 16, 230); 
 }   
-
 .header input{
   padding: 0.2rem 1.2rem;
   outline: none;
   border: none;
 }
-
 .header button{
   padding: 0.2rem 1rem;
   background: none;
   margin-left: 10px;
-
   outline: none;
   cursor: pointer;
-  border: 1px solid rgb(241, 232, 232);
   transition: 0.2s ease;
-
+  border: none;
+  color: white;
 }
 .container{
   display: flex;
@@ -59,7 +46,6 @@
   align-items: center;
   position: relative;
   width: 100%;
-
 }
 .brand{
   display: flex;
@@ -68,32 +54,19 @@
   font-weight: bold;
   color: white;
 }
-
-
-.cart{
-color: aliceblue;
-font-size: 20px;
-font-weight: bold;
-cursor: pointer;
-
-}
-
 .quantity{
-color:rgb(255, 255, 255);
-font-size: 1.2rem
+  color:rgb(255, 255, 255);
+  font-size: 1.2rem
 }
-
 .header button:hover{
-  background: rgb(157, 135, 135);
+  background: rgb(242, 58, 58);
   color: white;
   font-weight: bolder;
-
+  
 }
-
-.search
-  {
-      padding: 5px;
-  }
+.search{
+  padding: 5px;
+}
 .categories{
   position: relative;
   display: flex;
@@ -103,40 +76,17 @@ font-size: 1.2rem
   gap: 30px;
   font-size: 10px;
 }
-
-.model{
-position: relative;
+.filter{
+  position: relative;
   display: flex;
   align-items: center;
   height: 150px;
   width: 180px;  
   overflow: hidden;
   border: 1px solid rgb(230, 225, 225);
-
-}
-.brand-filter{
-  position:relative;
-  display: flex;
-  align-items: center;
-  height: 150px;
-  width: 180px;  
-  overflow: hidden;
-  border: 1px solid rgb(230, 225, 225);
-
-
-}
-.sort{
-  position:relative;
-  display: flex;
-  align-items: center;
-  height: 150px;
-  width: 180px;  
-  overflow: hidden;
-  border: 1px solid rgb(230, 225, 225);
-
 }
 form {
-	  display: flex;
+	display: flex;
   justify-content: center;
 }
 input {
@@ -149,9 +99,8 @@ input {
   {
       display: none;
   }
-
   .categories{
-display: none;
+      display: none;
   }
   .products{
     position:absolute;
@@ -159,8 +108,5 @@ display: none;
     display: grid;
     grid-template-columns: repeat(1, 200px);
     justify-content: center;
-   
-   
   }
-
 }

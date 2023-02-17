@@ -8,7 +8,6 @@
     overflow: hidden;
     border: 1px solid rgb(230, 225, 225);
     margin: 10px;
-  
 }
 .product p{
     margin: 14px;
@@ -51,15 +50,12 @@
     text-decoration: none;
     color: black;
 }
-@media (max-width:700px)
-    {
+@media (max-width:700px){
 .product{
     width: 100%;
-   
 }
 .product img{
     height: 180px;
     width: 150px;
     object-fit: fill;
-}
-    }
+}}

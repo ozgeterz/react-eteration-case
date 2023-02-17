@@ -3,8 +3,8 @@ import clicktocardReducer from "./clicktocardReducer.js";
 import { combineReducers } from "redux";
 
 const allreducers = combineReducers({
-  addtocard: addtocardReducer,
-  cardclick: clicktocardReducer,
+  addToCard: addtocardReducer,
+  cardClick: clicktocardReducer,
 });
 
 export default allreducers;

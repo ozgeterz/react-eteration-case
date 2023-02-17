@@ -1,25 +1,22 @@
 .carditem{
   display: flex;    
-    height: 50px;
-    width: 250px;
+  height: 50px;
+  width: 250px;
 }
 .cardbuttons{
-    display: flex;
+  display: flex;
 }
 .cardbuttons button{
-    background: orange;
-    color: white;
-    padding: 10px 10px; 
-    margin: 10px;
+  background: orange;
+  color: white;
+  padding: 10px 10px; 
+  margin: 10px;
 }
 .cardbuttons button:hover{
-    background: darkorange;
-    
+  background: darkorange; 
 }
 @media (max-width:600px){
-    .carditem{
-        display: flex;    
-      flex-direction: column;
-         
-      }
-}
+.carditem{
+  display: flex;    
+  flex-direction: column;
+}}

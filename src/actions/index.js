@@ -1,4 +1,4 @@
-export const addtocard = (payload) => {
+export const addToCard = (payload) => {
   return {
     type: "addtocard",
     payload: payload,
@@ -10,7 +10,7 @@ export const deletefrombasket = (payload) => {
     payload: payload,
   };
 };
-export const cardclick = () => {
+export const cardClick = () => {
   return {
     type: "cardclick",
   };
